@@ -21,5 +21,4 @@ void opcode_exec(char *opcode, stack_t **head, unsigned int line_number)
         }
 
     }
-    exit(EXIT_FAILURE);
 }
