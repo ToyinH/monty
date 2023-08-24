@@ -54,6 +54,7 @@ void opcode_nop(stack_t **h, unsigned int line_number);
 void opcode_sub(stack_t **h, unsigned int line_number);
 void opcode_div(stack_t **h, unsigned int line_number);
 void opcode_mul(stack_t **h, unsigned int line_number);
+void opcode_mod(stack_t **h, unsigned int line_number);
 void free_stack(stack_t *head);
 int len(stack_t *h);
 
