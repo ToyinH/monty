@@ -13,7 +13,8 @@ void opcode_exec(char *opcode, stack_t **head, unsigned int line_number)
         {"swap", opcode_swap},
 	{"add", opcode_add},
 	{"nop", opcode_nop},
-	{"sub", opcode_sub}
+	{"sub", opcode_sub},
+	{"div", opcode_div}
     };
 
     valid_instruction_found = 0;
