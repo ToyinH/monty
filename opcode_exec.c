@@ -11,7 +11,8 @@ void opcode_exec(char *opcode, stack_t **head, unsigned int line_number)
         {"pint", opcode_pint},
         {"pop", opcode_pop},
         {"swap", opcode_swap},
-	{"add", opcode_add}
+	{"add", opcode_add},
+	{"nop", opcode_nop}
     };
 
     valid_instruction_found = 0;
