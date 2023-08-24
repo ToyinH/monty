@@ -9,7 +9,7 @@ void free_str(char **str)
 
 	if (str == NULL)
 		return;
-	while (str[i] != NULl)
+	while (str[i] != NULL)
 	{
 		free(str[i]);
 		i++;
