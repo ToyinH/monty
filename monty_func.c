@@ -23,6 +23,8 @@ void monty_func(char *str)
 	if (strncmp(strings[0], "#", 1) == 0)
 	{
 		opcode_nop(&stack, line_number);
+		free_str(strings);
+		line_number++;
 		continue;
 	}
         if (strings[1])
