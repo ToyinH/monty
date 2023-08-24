@@ -20,6 +20,11 @@ void monty_func(char *str)
     while ((char_read = getline(&line, &l, file)) != -1)
     {
         strings = handl_strtok(line);
+	if (strncmp(strings[0], "#", 1) == 0)
+	{
+		opcode_nop(&stack, line_number);
+		continue;
+	}
         if (strings[1])
         {
             n = atoi(strings[1]);
