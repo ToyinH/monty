@@ -22,11 +22,11 @@ void opcode_exec(char *opcode, stack_t **head, unsigned int line_number)
 	    valid_instruction_found = 1;
             break;
         }
-	if (!valid_instruction_found)
-	{
-		dprintf(2, "L%d: unknown instruction %s\n", line_number, opcode);
-		exit(EXIT_FAILURE);
-	}
 
+    }
+    if (!valid_instruction_found)
+    {
+	    dprintf(2, "L%d: unknown instruction %s\n", line_number, opcode);
+	    exit(EXIT_FAILURE);
     }
 }
