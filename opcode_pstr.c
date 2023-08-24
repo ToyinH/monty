@@ -21,7 +21,10 @@ void opcode_pstr(stack_t **h, unsigned int line_number)
 		while (temp != NULL)
 		{
 			num = temp->n;
-			if (num > 127 || num == 0)
+			if (!((num >= 65 && num <= 90) || (num >= 97 && num <= 122)))
+			/*if (num > 127 || num == 0) */
+				break;
+			else if (num == 0)
 				break;
 			dprintf(1, "%c", (char)num);
 			temp = temp->next;
