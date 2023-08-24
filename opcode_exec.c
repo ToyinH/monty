@@ -17,7 +17,8 @@ void opcode_exec(char *opcode, stack_t **head, unsigned int line_number)
 	{"div", opcode_div},
 	{"mul", opcode_mul},
 	{"mod", opcode_mod},
-	{"pchar", opcode_pchar}
+	{"pchar", opcode_pchar},
+	{"pstr", opcode_pstr}
     };
 
     valid_instruction_found = 0;
