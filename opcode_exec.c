@@ -26,7 +26,8 @@ void opcode_exec(char *opcode, stack_t **head, unsigned int line_number)
 		{"mod", opcode_mod},
 		{"pchar", opcode_pchar},
 		{"pstr", opcode_pstr},
-		{"rotl", opcode_rotl}
+		{"rotl", opcode_rotl},
+		{"rotr", opcode_rotr}
 	};
 	valid_instruction_found = 0;
 	for (i = 0; i < sizeof(instruct) / sizeof(instruct[0]); i++)
