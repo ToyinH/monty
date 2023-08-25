@@ -1,4 +1,9 @@
 #include "monty.h"
+/**
+ * len - function to get the lenght of linked list
+ * @h: pointer to header node
+ * Return: return lenght.
+ */
 
 int len(stack_t *h)
 {
