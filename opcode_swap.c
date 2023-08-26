@@ -6,7 +6,7 @@ void opcode_swap(stack_t **h, unsigned int line_number)
 
     if (len(*h) < 2)
     {
-        dprintf(2, "L%d: can't swap, stack too short", line_number);
+        dprintf(2, "L%d: can't swap, stack too short\n", line_number);
         exit(EXIT_FAILURE);
     }
     else if (len(*h) == 2)
