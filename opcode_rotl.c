@@ -8,7 +8,7 @@ void opcode_rotl(stack_t **h, unsigned int line_number)
 {
 	stack_t *current, *current2, *ahead;
 
-	if (*h == NULL)
+	if (*h == NULL || len(*h) == 1)
 		return;
 	current = *h;
 	ahead = current->next;
