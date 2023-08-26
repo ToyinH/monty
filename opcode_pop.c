@@ -6,7 +6,7 @@ void opcode_pop(stack_t **h, unsigned int line_number)
 
     if (*h == NULL)
     {
-        dprintf(2, "L%d: can't pop an empty stack", line_number);
+        dprintf(2, "L%d: can't pop an empty stack\n", line_number);
         exit(EXIT_FAILURE);
     }
     temp = *h;
