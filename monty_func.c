@@ -14,6 +14,7 @@ void monty_func(char *str)
 	unsigned int line_number = 1;
 	stack_t *stack = NULL;
 	FILE *file = fopen(str, "r");
+	int k, not_space;
 
 	if (file == NULL)
 	{
@@ -22,7 +23,18 @@ void monty_func(char *str)
 	}
 	while ((char_read = getline(&line, &l, file)) != -1)
 	{
-		if (strcmp(line, "\n") == 0)
+		k = 0;
+		while (line[k] != '\0')
+		{
+			not_space = 0;
+			if (!isspace(line[k]))
+			{
+				not_space = 1;
+				break;
+			}
+			k++;
+		}
+		if (not_space == 0)
 		{
 			line_number++;
 			continue;
