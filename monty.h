@@ -43,7 +43,7 @@ typedef struct instruction_s
 void monty_func(char *str);
 char **handl_strtok(char *strline);
 void free_str(char **str);
-void opcode_exec(char *opcode, stack_t **head, unsigned int line_number);
+void opcode_exec(char **str, stack_t **head, unsigned int line_number);
 void opcode_push(stack_t **h, unsigned int line_number);
 void opcode_pall(stack_t **h, unsigned int line_number);
 void opcode_pint(stack_t **h, unsigned int line_number);
