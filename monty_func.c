@@ -39,7 +39,7 @@ void monty_func(char *str)
 		{
 			n = atoi(strings[1]);
 		}
-		else if (!strings[1])
+		else if (strings[1] == NULL)
 		{
 			dprintf(2, "L%d: usage: push integer\n", line_number);
 			exit(EXIT_FAILURE);
