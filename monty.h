@@ -62,6 +62,7 @@ void opcode_rotl(stack_t **h, unsigned int line_number);
 void opcode_rotr(stack_t **h, unsigned int line_number);
 void free_stack(stack_t *head);
 int isspace_str(char *str);
+void check_push(char **str, unsigned int line_number);
 int len(stack_t *h);
 
 
