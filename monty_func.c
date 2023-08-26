@@ -39,11 +39,6 @@ void monty_func(char *str)
 		{
 			n = atoi(strings[1]);
 		}
-		else
-		{
-			dprintf(2, "L%d: usage: push integer\n", line_number);
-			exit(EXIT_FAILURE);
-		}
 		opcode_exec(strings[0], &stack, line_number);
 		line_number++;
 		free_str(strings);
