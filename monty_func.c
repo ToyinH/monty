@@ -7,14 +7,12 @@
 
 void monty_func(char *str)
 {
-	char *line = NULL;
+	char *line = NULL, **strings = NULL;
 	size_t l = 0;
 	ssize_t char_read;
-	char **strings = NULL;
 	unsigned int line_number = 1;
 	stack_t *stack = NULL;
 	FILE *file = fopen(str, "r");
-	int k, not_space;
 
 	if (file == NULL)
 	{
@@ -23,33 +21,26 @@ void monty_func(char *str)
 	}
 	while ((char_read = getline(&line, &l, file)) != -1)
 	{
-		k = 0;
-		while (line[k] != '\0')
+		/*return 1 if character is encountered*/
+		if (isspace_str(line) == 1)
 		{
-			not_space = 0;
-			if (!isspace(line[k]))
+			strings = handl_strtok(line);
+			if (strncmp(strings[0], "#", 1) == 0)
 			{
-				not_space = 1;
-				break;
+				opcode_nop(&stack, line_number);
+				free_str(strings);
+				line_number++;
+				continue;
 			}
-			k++;
-		}
-		if (not_space == 0)
-		{
+			opcode_exec(strings, &stack, line_number);
 			line_number++;
-			continue;
-		}
-		strings = handl_strtok(line);
-		if (strncmp(strings[0], "#", 1) == 0)
-		{
-			opcode_nop(&stack, line_number);
 			free_str(strings);
+		}
+		else
+		{
 			line_number++;
 			continue;
 		}
-		opcode_exec(strings, &stack, line_number);
-		line_number++;
-		free_str(strings);
 	}
 	free(line);
 	free_stack(stack);
