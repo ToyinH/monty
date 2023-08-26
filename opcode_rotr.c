@@ -8,6 +8,8 @@ void opcode_rotr(stack_t **h, unsigned int line_number)
 {
 	stack_t *current, *current2;
 
+	if (*h == NULL || len(*h) == 1)
+		return;
 	current = *h;
 	current2 = *h;
 	(void)line_number;
