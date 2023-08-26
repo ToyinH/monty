@@ -22,6 +22,11 @@ void monty_func(char *str)
 	}
 	while ((char_read = getline(&line, &l, file)) != -1)
 	{
+		if (strcmp(line, "\n") == 0)
+		{
+			line_number++;
+			continue;
+		}
 		strings = handl_strtok(line);
 		if (strncmp(strings[0], "#", 1) == 0)
 		{
@@ -33,6 +38,11 @@ void monty_func(char *str)
 		if (strings[1])
 		{
 			n = atoi(strings[1]);
+		}
+		else
+		{
+			dprintf(2, "L%d: usage: push integer\n", line_number);
+			exit(EXIT_FAILURE);
 		}
 		opcode_exec(strings[0], &stack, line_number);
 		line_number++;
